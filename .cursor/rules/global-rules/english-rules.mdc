@@ -1,0 +1,68 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# English Usage Rules
+
+## Core Principles
+
+1. **Language Selection**
+   - Use English for all technical documentation and code-related content
+   - Maintain consistency in language choice within each document
+   - Clearly indicate when switching between languages
+
+2. **Vocabulary Guidelines**
+   - Use common, widely understood English words for general communication
+   - Employ technical terminology when discussing specialized topics
+   - Define technical terms on first use when writing for general audiences
+
+3. **Technical Documentation**
+   - Use standard technical terminology in code documentation
+   - Maintain consistency with industry-standard terms
+   - Follow established naming conventions for technical concepts
+
+4. **Writing Style**
+   - Keep sentences clear and concise
+   - Use active voice when possible
+   - Maintain professional tone
+   - Avoid unnecessary jargon
+
+## Implementation Rules
+
+1. **General Communication**
+   - Use simple, clear language for general instructions
+   - Avoid complex vocabulary unless necessary
+   - Explain technical concepts in accessible terms
+
+2. **Technical Content**
+   - Use precise technical terminology when appropriate
+   - Maintain consistency with industry standards
+   - Include definitions for specialized terms
+
+3. **Code Documentation**
+   - Use standard programming terminology
+   - Follow language-specific naming conventions
+   - Document technical decisions clearly
+
+4. **User Documentation**
+   - Balance technical accuracy with accessibility
+   - Use clear, simple language for user instructions
+   - Include technical terms only when necessary
+
+## Quality Control
+
+1. **Review Process**
+   - Check for consistent language use
+   - Verify technical terminology accuracy
+   - Ensure clarity for target audience
+
+2. **Documentation Standards**
+   - Follow established documentation templates
+   - Maintain consistent formatting
+   - Use appropriate technical terminology
+
+3. **Accessibility**
+   - Ensure content is understandable for target audience
+   - Provide necessary context for technical terms
+   - Use clear explanations for complex concepts

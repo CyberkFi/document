@@ -13,7 +13,7 @@ Document Maker là một dự án tập trung vào việc thiết kế và tạo
 
 ### 1. Thư Mục Templates
 ```
-templates/
+templates/ là nơi lưu các template cho các loại tài liệu
 ├── research_reports/     # Template cho báo cáo nghiên cứu
 ├── project_docs/        # Template cho tài liệu dự án
 ├── technical_specs/     # Template cho đặc tả kỹ thuật

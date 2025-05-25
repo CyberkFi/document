@@ -1,2 +1,0 @@
-# How We Serve Clients
-

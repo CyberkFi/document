@@ -1,0 +1,51 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+# Default Team Structure & Communication Setup
+
+## Standard Team Structure (5 người)
+
+| Role | Responsibility | Experience Level |
+|------|----------------|------------------|
+| Project Manager | Quản lý dự án, timeline, stakeholder communication | 3+ years blockchain projects |
+| Lead Web3 Fullstack Developer | Architecture, smart contracts, frontend integration | 5+ years Web3 + Next.js |
+| Senior Web3 Fullstack Developer | Backend, bridge protocols, oracle integration | 4+ years blockchain development |
+| QA Engineer | Testing, automation, smart contract testing | 3+ years blockchain testing |
+| UI/UX Designer | Interface design, UX optimization, bot design | 4+ years crypto applications |
+
+## Standard Communication Channels
+
+### Chat & Quick Updates
+- **Primary:** Telegram group
+- **Purpose:** Daily updates, technical discussions, quick questions
+- **Format:** Text-based standups, no formal meetings required
+
+### Official Documentation
+- **Channel:** Email
+- **Purpose:** Milestones, deliverables, formal approvals, change requests
+- **Format:** Structured emails with clear action items
+
+### Meetings & Reports
+- **Platform:** Google Meet
+- **Schedule:**
+  - Weekly progress: Fridays, 30 minutes
+  - Demo sessions: End of each sprint, 1 hour
+  - Ad-hoc technical: As needed
+- **Recording:** Optional based on project needs
+
+## Examples
+
+<example>
+  Team setup cho dự án DeFi với budget $15k-25k, timeline 1-2 tháng:
+  - Sử dụng standard 5-person team structure
+  - Telegram cho daily communication
+  - Email cho formal milestones
+  - Weekly Google Meet progress calls
+</example>
+
+<example type="invalid">
+  Sử dụng chỉ Discord cho tất cả communication (thiếu formal email channel)
+  Hoặc setup team 8+ người cho budget nhỏ dưới $20k
+</example>

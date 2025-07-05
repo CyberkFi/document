@@ -1,0 +1,55 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Rule: Handling Document Template Creation and Editing
+
+## Critical Rules
+
+- Activate this rule if the user prompt starts with `/template`.
+- **If the prompt starts with `/template-edit`:**
+    - If the user specifies a section to edit, focus on assisting with that particular section.
+    - If the user's request about which section to edit is unclear, ask for clarification (e.g., "Which section would you like to work on?").
+    - If the user requests to review or edit all sections:
+        - Iterate through each section of the template sequentially, from top to bottom.
+        - For each section:
+            - Present the current content or structure of the section.
+            - Offer suggestions for improvement or ask clarifying questions to understand the user's desired changes. (e.g., "For the 'Document Metadata' section, are there any other fields like 'Department' or 'Reviewer' you'd like to add?")
+            - Wait for the user's confirmation or specific instructions before proceeding to make any changes.
+            - After applying confirmed changes, move to the next section.
+- **If the prompt starts with `/template-create`:**
+    - Begin by understanding the type of document template the user wishes to create (e.g., "What kind of document template are you looking to create? For example, is it a technical specification, a marketing brief, or something else?").
+    - Ask targeted questions to clarify the user's specific needs, the intended audience, and key information the document should contain.
+    - If necessary, and with user consent, perform research on common structures or best practices for the requested document type.
+    - Based on the gathered information and user responses, propose an initial template structure or draft.
+    - Iterate on the draft with the user, refining sections and content until it meets their requirements.
+
+## Examples
+
+<example>
+  User: `/template-edit prd-template.md`
+  Agent: "Okay, I have the `prd-template.md` loaded. Which section would you like to start editing? Or would you prefer to go through all sections one by one?"
+  User: "Let's go through all of them, starting from the top."
+  Agent: "Great. The first section is 'Thông tin tài liệu (Document Metadata)'. It currently includes: Tên tài liệu, Ngày tạo, Phiên bản, Tên khách hàng, Tên dự án, and Người lập báo giá. Are these fields sufficient, or would you like to add, remove, or modify any of them? For instance, we could add a 'Status' field or a 'Last Modified By' field."
+  User: "Let's add a 'Status' field."
+  Agent: "Understood. I will add a 'Status' field to the 'Document Metadata' section. (Applies the change after confirmation). Now, moving to the next section: 'Điều kiện/Tài liệu đầu vào (Predefined Conditions/Inputs)'..."
+</example>
+
+<example>
+  User: `/template-create legal-contract`
+  Agent: "I can help you create a template for a legal contract. To start, could you tell me more about the type of contract? For example, is it a Non-Disclosure Agreement (NDA), a Service Agreement, an Employment Contract, or something else? Knowing the specific type will help me suggest relevant sections and clauses."
+  User: "It's a Service Agreement."
+  Agent: "Understood. For a Service Agreement template, we should typically include sections like: Parties Involved, Scope of Services, Term of Agreement, Payment Terms, Confidentiality, Limitation of Liability, Termination, and Governing Law. Does this sound like a good starting point? Are there any other specific areas you need this agreement to cover?"
+</example>
+
+<example type="invalid">
+  User: "I need to make a new document."
+  Agent: (Does not activate this template rule) "Sure, what kind of document are you thinking of creating? I can help you get started."
+</example>
+
+<example type="invalid">
+  User: `/template-edit`
+  Agent: (Without asking for clarification or confirmation, immediately starts editing the first section of a previously discussed template) "I've updated the 'Introduction' section for you."
+  (This is invalid because the agent should first ask which section, or if all sections, and then seek confirmation before making changes, especially if the template isn't explicitly mentioned in the current prompt.)
+</example>

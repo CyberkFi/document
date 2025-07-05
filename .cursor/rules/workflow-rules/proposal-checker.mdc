@@ -1,0 +1,61 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Proposal Generation Standards
+
+## Critical Rules
+
+### 1. Document Metadata (Thông tin tài liệu)
+- MUST include the following information:
+    - Người thực hiện (Implementer/Author)
+    - Ngày thực hiện (Date of Creation)
+    - Hiệu lực báo giá (Quotation Validity Period)
+    - Phiên bản (Version)
+
+### 2. Predefined Conditions/Inputs (Điều kiện/Tài liệu đầu vào)
+- MUST clearly state the specific conditions, documents, or inputs upon which the proposal and its estimates are based. (Ví dụ: "Ước tính này dựa trên tài liệu đặc tả yêu cầu phiên bản 1.2 ngày YYYY-MM-DD và buổi họp làm rõ yêu cầu ngày YYYY-MM-DD.")
+
+### 3. Overviews (Tổng quan)
+- MUST include:
+    - Specific pricing (Giá cả cụ thể). If multiple pricing tiers exist, MUST clearly detail the services included in each tier (Nếu có nhiều mức giá, cần ghi rõ dịch vụ cho từng mức).
+    - Project completion timeline OR a timeline for resolving the client's problem (Thời gian hoàn thành dự án hoặc thời gian giải quyết vấn đề của khách hàng).
+
+### 4. Understanding the Client's Problem (Hiểu biết về bài toán của khách hàng)
+- MUST re-state and explain the client's problem clearly and coherently (Giải thích lại bài toán của khách hàng một cách mạch lạc).
+- MUST include a feature list (Danh sách features list). Each feature MUST have necessary notes to describe it (mỗi feature kèm các ghi chú cần thiết để mô tả tính năng đó).
+
+### 5. Technical Proposal (Đề xuất kỹ thuật)
+- **Tech Stack (Công nghệ sử dụng):**
+    - MUST describe the technologies to be used in the project (Mô tả các công nghệ sẽ sử dụng trong dự án).
+    - MUST list all relevant third-party services or libraries (Toàn bộ các third-party liên quan).
+- **Architecture (Kiến trúc) (Optional):**
+    - MAY describe the proposed system architecture (Mô tả kiến trúc sử dụng dự kiến vào sản phẩm).
+
+### 6. Team & Communication (Đội ngũ & Giao tiếp)
+- MUST define team roles and their responsibilities (Các vai trò và mô tả trách nhiệm của họ).
+- MUST outline the communication methods and reporting structure (Cách thức liên lạc và báo cáo).
+- MUST ensure a provision for daily communication/updates (Đảm bảo là có hình thức liên lạc hằng ngày).
+
+### 7. Maintenance (Bảo trì)
+- MUST specify the maintenance period and the scope of maintenance (Thời gian maintain và phạm vi maintain).
+- MUST detail the activation period for any "hypercare" phase (e.g., "24 giờ ngay sau khi launch") (Thời gian kích hoạt gói "hypercare").
+
+### 8. Assumptions (Các giả định)
+- MUST list all assumptions made. Examples:
+    - "Hệ thống được xây dựng theo chất lượng MVP, có nghĩa là nó không bao gồm các hoạt động: Security test, Stress test."
+    - "Sử dụng thiết bị có sẵn của CyberK để tiến hành kiểm thử (ví dụ: iPhone 15 và Samsung S20)."
+
+## Examples
+
+<example>
+User: "Help me create a proposal for Project Phoenix, based on our discussion yesterday."
+Agent: "Okay, I will use the proposal generation standards. Let's start with the Document Metadata: Who is the implementer for Project Phoenix, what is today's date, how long is the quotation valid, and what is the version number of this proposal?"
+// Agent then proceeds to gather information for all sections of the rule to draft the proposal.
+</example>
+
+<example type="invalid">
+User: "Just give me a quick price for a new landing page."
+Agent: // Agent provides only a price without attempting to gather information for other mandatory sections like Document Metadata, Understanding the Client's Problem, Assumptions, etc.
+</example>

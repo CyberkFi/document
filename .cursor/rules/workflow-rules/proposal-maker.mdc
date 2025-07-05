@@ -1,0 +1,78 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Quy trình Tạo Đề xuất từ PRD
+
+## Các Quy tắc Quan trọng
+
+- **Hiểu rõ PRD:** Đọc và hiểu kỹ Tài liệu Yêu cầu Sản phẩm (PRD) trước khi bắt đầu.
+- **Sử dụng Mẫu và Phát triển Từng phần:**
+    - Sử dụng tệp mẫu `@proposal-template.md` để soạn thảo đề xuất.
+    - **Áp dụng Default Parameters:** Tham khảo `@templates/proposal-defaults.md` cho các thông số chuẩn về team, communication, maintenance nếu client không specify riêng.
+    - Xử lý từng mục trong mẫu một cách riêng biệt.
+    - Thảo luận với người dùng về từng mục, đặt câu hỏi để làm rõ và đảm bảo tính chính xác, đầy đủ trước khi chuyển sang mục tiếp theo.
+- **Kiểm thử Chất lượng:** Đối chiếu đề xuất đã tạo với các tiêu chuẩn được nêu trong `@proposal-checker.mdc` để đảm bảo chất lượng.
+
+## Default Parameters Usage Guidelines
+
+### Khi nào sử dụng Defaults:
+- Client không specify team structure preferences
+- Project scope: 1-3 tháng, $15k-$30k budget range
+- Standard blockchain/DApp development
+- Không có special communication requirements
+
+### Khi nào hỏi Client về customization:
+- Large projects (>3 tháng, >$50k)
+- Enterprise clients 
+- Client mention specific preferences về team size/communication
+- Specialized tech requirements
+
+### Default Values to Apply:
+
+**Team Structure (từ proposal-defaults.md):**
+- 5-person team: PM + 2 Web3 Devs + QA + Designer
+- Experience levels như specified trong defaults
+
+**Communication (từ proposal-defaults.md):**
+- Telegram cho daily chat
+- Email cho formal approvals  
+- Google Meet daily 15-min demos
+
+**Maintenance (từ proposal-defaults.md):**
+- 2 tháng free support
+- 7 ngày hypercare period
+- Response times như specified
+
+**Assumptions (từ proposal-defaults.md):**
+- 3-day client response time
+- Scope stability
+- Infrastructure readiness
+- 99% API uptime
+
+## Ví dụ
+
+<example>
+  Người dùng: "Hãy giúp tôi tạo một đề xuất cho tính năng mới được mô tả trong PRD này. Budget khoảng $20k, timeline 6 tuần."
+  Agent: (Áp dụng quy tắc) "Được rồi, với budget $20k và timeline 6 tuần, tôi sẽ áp dụng default team structure 5 người và standard communication channels từ proposal-defaults.md. Trước tiên tôi sẽ đọc PRD để hiểu requirements. Bạn có preferences gì đặc biệt về team structure hoặc communication không?"
+</example>
+
+<example>
+  Người dùng: "Tạo proposal cho dự án enterprise $100k, 6 tháng."
+  Agent: (Nhận biết cần customize) "Đây là large-scale project. Tôi sẽ cần hỏi thêm về team preferences và communication requirements thay vì dùng defaults. Standard 5-person team có phù hợp không? Bạn có requirements gì về formal reporting processes?"
+</example>
+
+<example type="invalid">
+  Người dùng: "Tạo proposal nhanh với team 3 người, budget $15k."
+  Agent: (Không nên ignore client specification) "Tôi sẽ áp dụng default 5-person team." (Sai - nên respect client's 3-person requirement)
+  Agent (Đúng): "Noted về 3-person team requirement. Tôi sẽ customize team structure thay vì dùng default 5-person team. Bạn muốn team structure như thế nào? PM + 2 devs hoặc lead dev + 2 specialists?"
+</example>
+
+## Process Flow với Defaults
+
+1. **Parse Client Requirements:** Identify budget, timeline, special preferences
+2. **Determine Default Usage:** Check criteria để decide defaults vs customize  
+3. **Apply/Reference Defaults:** Sử dụng proposal-defaults.md values khi appropriate
+4. **Confirm with Client:** Mention defaults being used và ask for confirmation
+5. **Proceed with Template:** Fill proposal template với defaults hoặc customized values

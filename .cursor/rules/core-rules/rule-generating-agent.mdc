@@ -3,91 +3,79 @@ description: This rule is essential for maintaining consistency and quality in r
 globs: 
 alwaysApply: true
 ---
+# Cursor Rules Format
+
+## Template Structure for Rules Files
+
+```mdc
 ---
-description: 
-globs: 
-alwaysApply: true
+description: `Comprehensive description that provides full context and clearly indicates when this rule should be applied. Include key scenarios, impacted areas, and why following this rule is important. While being thorough, remain focused and relevant. The description should be detailed enough that the agent can confidently determine whether to apply the rule in any given situation.`
+globs: .cursor/rules/**/*.mdc OR blank
+alwaysApply: {true or false}
 ---
 
-# Hướng Dẫn Tương Tác Với CursorAI
+# Rule Title
 
-## Quy Tắc Bắt Buộc
+## Critical Rules
 
-### 1. Làm Rõ Yêu Cầu
-- **Bước 1:** Phân tích yêu cầu ban đầu
-- **Bước 2:** Xác định các điểm chưa rõ ràng
-- **Bước 3:** Đặt câu hỏi làm rõ cho từng điểm
-- **Bước 4:** Chỉ tiếp tục khi đã có đầy đủ thông tin cần thiết
+- Concise, bulleted list of actionable rules the agent MUST follow
 
-*Ví dụ câu hỏi làm rõ:*
-- "Bạn có thể giải thích rõ hơn về [điểm chưa rõ]?"
-- "Tôi cần thêm thông tin về [yếu tố cụ thể]"
-- "Bạn có thể định nghĩa rõ [khái niệm] không?"
+## Examples
 
-### 2. Trình Bày Kế Hoạch
-- **Bước 1:** Tóm tắt yêu cầu đã được làm rõ
-- **Bước 2:** Liệt kê các bước thực hiện cụ thể
-- **Bước 3:** Giải thích lý do cho từng bước
-- **Bước 4:** Đề xuất timeline (nếu cần)
+<example>
+{valid rule application}
+</example>
 
-*Format trình bày kế hoạch:*
-```
-1. Tóm tắt yêu cầu:
-   - [Điểm 1]
-   - [Điểm 2]
-
-2. Các bước thực hiện:
-   - Bước 1: [Chi tiết]
-   - Bước 2: [Chi tiết]
-   ...
-
-3. Lý do cho từng bước:
-   - Bước 1: [Giải thích]
-   - Bước 2: [Giải thích]
-   ...
+<example type="invalid">
+{invalid rule application}
+</example>
 ```
 
-### 3. Xác Nhận Trước Khi Thực Hiện
-- **Bước 1:** Trình bày kế hoạch chi tiết
-- **Bước 2:** Yêu cầu xác nhận từ người dùng
-- **Bước 3:** Chỉ thực hiện sau khi có xác nhận
-- **Bước 4:** Nếu có thay đổi, yêu cầu xác nhận lại
+### Organizational Folders (Create if non existent)
+All rules files will be under an organizational folder:
+- .cursor/rules/core-rules - rules related to cursor agent behavior or rule generation specifically
+- .cursor/rules/my-rules - gitignore in a shared repo, rules specifically for ME only
+- .cursor/rules/global-rules - these will be rules that are ALWAYS applied to every chat and cmd/ctrl-k context
+- .cursor/rules/testing-rules - rules about testing
+- .cursor/rules/tool-rules - rules specific to different tools, such as git, linux commands, direction of usage of MCP tools
+- .cursor/rules/ts-rules - typescript language specific rules
+- .cursor/rules/py-rules - python specific rules
+- .cursor/rules/ui-rules - rules about html, css, react
+* create new folders under .cursor/rules/ as needed following similar grouping conventions,
+    - for example `.cursor/rules/cs-rules` if we started using c# in a project
 
-*Câu xác nhận mẫu:*
-"Tôi sẽ thực hiện theo kế hoạch trên. Bạn có đồng ý không?"
+## Glob Pattern Examples
+Common glob patterns for different rule types:
+- Core standards: .cursor/rules/*.mdc
+- Language rules: *.cs, *.cpp
+- Testing standards: *.test.ts, *.test.js
+- React components: src/components/**/*.tsx
+- Documentation: docs/**/*.md, *.md
+- Configuration files: *.config.js
+- Build artifacts: dist/**/*
+- Multiple extensions: *.js, *.ts, *.tsx
+- Multiple patterns: dist/**/*.*, docs/**/*.md, *test*.*
 
-### 4. Áp Dụng Cho Mọi Prompt
-- Mọi tương tác phải tuân thủ 3 quy tắc trên
-- Không có ngoại lệ
-- Nếu phát hiện thiếu thông tin, quay lại Bước 1
-
-## Quy Trình Xử Lý Prompt
-
-1. **Tiếp nhận prompt**
-   - Đọc và phân tích yêu cầu
-   - Xác định các điểm cần làm rõ
-
-2. **Làm rõ yêu cầu**
-   - Đặt câu hỏi cho các điểm chưa rõ
-   - Chờ phản hồi và làm rõ tiếp nếu cần
-   - hãy đảm bảo đi qua từng phần một,
-   - Hãy đặt lại câu hỏi nếu nó chưa rõ hoặc chưa đủ cụ thể. Hãy sử dụng lối đặt câu hỏi của socrates để bạn có thể hiểu rõ. 
-
-3. **Trình bày kế hoạch**
-   - Tóm tắt yêu cầu đã rõ
-   - Liệt kê các bước thực hiện
-   - Giải thích lý do cho từng bước
-
-4. **Xin xác nhận**
-   - Trình bày kế hoạch chi tiết
-   - Yêu cầu xác nhận từ người dùng
-
-5. **Thực hiện**
-   - Chỉ bắt đầu sau khi có xác nhận
-   - Thực hiện theo kế hoạch đã được duyệt
-
-## Lưu ý
-- Luôn giữ thái độ chuyên nghiệp và lịch sự
-- Sẵn sàng điều chỉnh kế hoạch nếu cần
-- Đảm bảo mọi thay đổi đều được xác nhận
-- Ghi nhận và học hỏi từ mỗi tương tác 
+## Critical Rules
+  - Rule files will be located and named ALWAYS as: `.cursor/rules/{organizational-folder}/rule-name-{auto|agent|manual|always}.mdc`
+  - Rules will NEVER be created anywhere other than .cursor/rules/**
+  - You will always check to see if there is an existing rule to update under all .cursor/rules sub-folders
+  - FrontMatter Rules Types:
+    - The front matter section must always start the file and include all 3 fields, even if the field value will be blank - the types are:
+      - Manual Rule: IF a Manual rule is requested - description and globs MUST be blank and alwaysApply: false and filename ends with -manual.mdc.
+      - Auto Rule: IF a rule is requested that should apply always to certain glob patterns (example all typescript files or all markdown files) - description must be blank, and alwaysApply: false and filename ends with -auto.mdc.
+      - Always Rule: Global Rule applies to every chat and cmd/ctrl-k - description and globs blank, and alwaysApply: true  and filename ends with -always.mdc.
+      - Agent Select Rule: The rule does not need to be loaded into every chat thread, it serves a specific purpose. The description MUST provide comprehensive context about when to apply the rule, including scenarios like code changes, architecture decisions, bug fixes, or new file creation. Globs blank, and alwaysApply:false and filename ends with -agent.mdc
+  - For Rule Content - focus on actionable, clear directives without unnecessary explanation
+  - When a rule will only be used sometimes (alwaysApply: false) the description MUST provide enough context for the AI to confidently determine when to load and apply the rule
+  - Use Concise Markdown Tailored to Agent Context Window usage
+  - Always indent content within XML Example section with 2 spaces
+  - Emojis and Mermaid diagrams are allowed and encouraged if it is not redundant and better explains the rule for the AI comprehension
+  - While there is no strict line limit, be judicious with content length as it impacts performance. Focus on essential information that helps the agent make decisions
+  - Always include a valid and invalid example
+  - NEVER use quotes around glob patterns, NEVER group glob extensions with `{}`
+  - If the request for a rule or a future behavior change includes context of a mistake is made, this would be great to use in the example for the rule
+  - After rule is created or updated, Respond with the following:
+    - AutoRuleGen Success: path/rule-name.mdc
+    - Rule Type: {Rule Type}
+    - Rule Description: {The exact content of the description field}

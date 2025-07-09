@@ -127,6 +127,11 @@
 
 ### 6.1. Nhiệm Vụ Cá Nhân (Ví dụ)
 
+> ***Hướng dẫn:*** *Làm rõ các vai trò trong dự án để đảm bảo không có trách nhiệm nào bị bỏ sót. Cụ thể:*
+> -   *Ai đảm bảo yêu cầu chất lượng và xác thực lỗi (validate bugs)?*
+> -   *Ai đảm bảo giao tiếp với khách hàng và viết tài liệu yêu cầu (PRD/BRD)?*
+> -   *Ai đảm bảo hạ tầng và back-end?*
+
 -   **Đức:** *Chịu trách nhiệm phát triển AI và đảm bảo AI chạy tốt.*
 -   **Thái:** *Đảm bảo FE và BE chạy tốt.*
 -   **Mai:** *Đảm bảo tính năng ABC chạy tốt, đúng hạn.*
